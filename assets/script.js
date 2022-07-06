@@ -8,6 +8,7 @@ saveButton.on('click', function (event) {
 
 })
 
+$('#recipeInput').val(localStorage.getItem('0'));
 
 /*
 function store(){
