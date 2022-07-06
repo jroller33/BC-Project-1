@@ -1,3 +1,7 @@
+
+
+
+/*
 function myFunction() {
     const newP = document.createElement("p");
     const textP = document.createTextNode("Hello");
@@ -7,3 +11,4 @@ function myFunction() {
   }
 
   myFunction();
+  */
