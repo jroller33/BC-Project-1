@@ -1,8 +1,5 @@
 $(document).ready(() => {
-  // doSearch
-  // get text in search input
-  // make ajax call
-  // populate divs with results
+  // doSearch, get text in search input, make ajax call, populate divs with results
   const doSearch = () => {
     // Get text fom input search box
     let searchQuery = $('#youtubeSearchBar').val();
@@ -11,16 +8,15 @@ $(document).ready(() => {
     // maxResults=10 set the number of results we want to retrieve
     // key is your custom key gotten from the previoud step
     let url = 'https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&key=AIzaSyCYchlTicuWz3_usJZyluJKkW0S6OAoh7E&q=' + searchQuery;
-    // we invoke an ajax request here setting the url, method GET
-    // on success we want to populate the div .video-play with an iframe that will hold the first video result. The class embed-resopnsive-item is bootstrap made.suggest-list
-    // then we call populateSuggestions and pass in the rest of the videos for the suggested videos section
-    // on error, we want to show the error response text in place of the video
+    // ajax request here setting the url, method GET
+    // we want to populate the div .video-play with an iframe that will hold the first video result. 
+
     $.ajax({
       url: url,
       method: 'GET',
       success: (result) => {
         $('.video-play').text('');
-        $('.video-play').append(`<iframe class="embed-responsive-item" src=https://www.youtube.com/embed/${result.items[0].id.videoId} allowFullScreen title='youtube player' />`)
+        $('.video-play').append(`<iframe class="aspect-video w-900 h-500" src=https://www.youtube.com/embed/${result.items[0].id.videoId} allowFullScreen title='youtube player' />`)
         populateSuggestions(result.items.slice(1,10));
       },
       error: (err, response) => {
@@ -30,14 +26,12 @@ $(document).ready(() => {
     })
   };
 
-  // click event on submit button
-    // doSearch with input text
+  // click event on submit button, doSearch with input text
     $('button:button').click(() => {
       doSearch();
     });
   
-    // on document ready 
-      // doSearch with default intput text
+    // on document ready doSearch with default intput text
     doSearch();
   });
   
