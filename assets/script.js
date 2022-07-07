@@ -5,7 +5,7 @@ $(document).ready(() => {
   // populate divs with results
   const doSearch = () => {
     // Get text fom input search box
-    let searchQuery = $('.search input:text').val();
+    let searchQuery = $('#youtubeSearchBar').val();
     // Here we are composing the endpoint with query parameters as defined from https://developers.google.com/youtube/v3/docs/search/list
     // part=snippet is like a required default
     // maxResults=10 set the number of results we want to retrieve
