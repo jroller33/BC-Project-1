@@ -1,3 +1,48 @@
+$(document).ready(() => {
+  // doSearch
+  // get text in search input
+  // make ajax call
+  // populate divs with results
+  const doSearch = () => {
+    // Get text fom input search box
+    let searchQuery = $('.search input:text').val();
+    // Here we are composing the endpoint with query parameters as defined from https://developers.google.com/youtube/v3/docs/search/list
+    // part=snippet is like a required default
+    // maxResults=10 set the number of results we want to retrieve
+    // key is your custom key gotten from the previoud step
+    let url = 'https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&key=AIzaSyCYchlTicuWz3_usJZyluJKkW0S6OAoh7E&q=' + searchQuery;
+    // we invoke an ajax request here setting the url, method GET
+    // on success we want to populate the div .video-play with an iframe that will hold the first video result. The class embed-resopnsive-item is bootstrap made.suggest-list
+    // then we call populateSuggestions and pass in the rest of the videos for the suggested videos section
+    // on error, we want to show the error response text in place of the video
+    $.ajax({
+      url: url,
+      method: 'GET',
+      success: (result) => {
+        $('.video-play').text('');
+        $('.video-play').append(`<iframe class="embed-responsive-item" src=https://www.youtube.com/embed/${result.items[0].id.videoId} allowFullScreen title='youtube player' />`)
+        populateSuggestions(result.items.slice(1,10));
+      },
+      error: (err, response) => {
+        console.log(err.responseText);
+        $('.video-play').text(err.responseText);
+      }
+    })
+  };
+
+  // click event on submit button
+    // doSearch with input text
+    $('button:button').click(() => {
+      doSearch();
+    });
+  
+    // on document ready 
+      // doSearch with default intput text
+    doSearch();
+  });
+  
+
+//  **********************  Recipe Text Input and localStorage below   **********************************************
 
 // var defaultTab = recipe1tab;
 // $('#recipeInput').val(localStorage.getItem('1'));
@@ -96,50 +141,50 @@ recipe5tab.on('click', function (event) {
 
 
 
-//        YouTube API
+// //        YouTube API
 
-// 2. This code loads the IFrame Player API code asynchronously.
-var tag = document.createElement('script');
+// // 2. This code loads the IFrame Player API code asynchronously.
+// var tag = document.createElement('script');
 
-tag.src = "https://www.youtube.com/iframe_api";
-var firstScriptTag = document.getElementsByTagName('script')[0];
-firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+// tag.src = "https://www.youtube.com/iframe_api";
+// var firstScriptTag = document.getElementsByTagName('script')[0];
+// firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
-// 3. This function creates an <iframe> (and YouTube player)
-//    after the API code downloads.
-var player;
-function onYouTubeIframeAPIReady() {
-  player = new YT.Player('player', {
-    height: '390',
-    width: '640',
-    videoId: 'M7lc1UVf-VE',
-    playerVars: {
-      'playsinline': 1
-    },
-    events: {
-      'onReady': onPlayerReady,
-      'onStateChange': onPlayerStateChange
-    }
-  });
-}
-// 4. The API will call this function when the video player is ready.
-function onPlayerReady(event) {
-  event.target.playVideo();
-}
+// // 3. This function creates an <iframe> (and YouTube player)
+// //    after the API code downloads.
+// var player;
+// function onYouTubeIframeAPIReady() {
+//   player = new YT.Player('player', {
+//     height: '500',
+//     width: '1000',
+//     videoId: 'M7lc1UVf-VE',
+//     playerVars: {
+//       'playsinline': 1
+//     },
+//     events: {
+//       'onReady': onPlayerReady,
+//       'onStateChange': onPlayerStateChange
+//     }
+//   });
+// }
+// // 4. The API will call this function when the video player is ready.
+// function onPlayerReady(event) {
+//   event.target.playVideo();
+// }
 
-// 5. The API calls this function when the player's state changes.
-//    The function indicates that when playing a video (state=1),
-//    the player should play for six seconds and then stop.
-var done = false;
-function onPlayerStateChange(event) {
-  if (event.data == YT.PlayerState.PLAYING && !done) {
-    setTimeout(stopVideo, 6000);
-    done = true;
-  }
-}
-function stopVideo() {
-  player.stopVideo();
-}
+// // 5. The API calls this function when the player's state changes.
+// //    The function indicates that when playing a video (state=1),
+// //    the player should play for six seconds and then stop.
+// var done = false;
+// function onPlayerStateChange(event) {
+//   if (event.data == YT.PlayerState.PLAYING && !done) {
+//     setTimeout(stopVideo, 6000);
+//     done = true;
+//   }
+// }
+// function stopVideo() {
+//   player.stopVideo();
+// }
 // text to speech API Key: 9910c3d681d94aae8f78907df9e56a0b
 // 
 
