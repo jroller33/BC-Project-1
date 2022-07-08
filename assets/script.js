@@ -1,6 +1,7 @@
 $(document).ready(() => {
   // doSearch, get text in search input, make ajax call, populate divs with results
   const doSearch = () => {
+
     // Get text fom input search box
     let searchQuery = $('#youtubeSearchBar').val();
     // Here we are composing the endpoint with query parameters as defined from https://developers.google.com/youtube/v3/docs/search/list
@@ -16,8 +17,7 @@ $(document).ready(() => {
       method: 'GET',
       success: (result) => {
         $('.video-play').text('');
-        $('.video-play').append(`<iframe class="aspect-video w-900 h-500" src=https://www.youtube.com/embed/${result.items[0].id.videoId} allowFullScreen title='youtube player' />`)
-        populateSuggestions(result.items.slice(1,10));
+        $('.video-play').append(`<iframe class="aspect-w-16 aspect-h-9 grid h-screen place-items-center grid h-screen place-items-center" src=https://www.youtube.com/embed/${result.items[0].id.videoId} allowFullScreen title='youtube player' />`)
       },
       error: (err, response) => {
         console.log(err.responseText);
@@ -26,112 +26,148 @@ $(document).ready(() => {
     })
   };
 
+  const doTabCapture = (index) => {
+      // $(".tab").each(function (index) {
+  //   console.log(index);
+  // $(".tabCheck").on('click', function (event) {
+  //      event.preventDefault();
+  //     console.log("recipe1tab");
+      $('#recipeInput').val("");
+      $('#recipeInput').val(JSON.parse(localStorage.getItem(index)));
+      currentTab.currentId = index;
+  // })
+  // })
+  }
   // click event on submit button, doSearch with input text
-    $('button:button').click(() => {
+      $("#youtubeSearchButton").click(() => {
       doSearch();
     });
+
+    $(".tab").on("click",function (event) {
+      // event.preventDefault();
+      console.log("hello",$(this).attr("value"));
+
+      doTabCapture($(this).attr("value"));
+    })
   
+    let currentTab = {currentId: 0, changed: false};
     // on document ready doSearch with default intput text
-    doSearch();
-  });
+  if ($("#youtubeSearchBar").attr("data-type") == "0") {
+      doSearch();
+     
+      $("#youtubeSearchBar").attr("data-type", "1")
+  }
+
+  if (!currentTab.changed)
+  {
+    console.log("here")
+    doTabCapture(0)
+    currentTab.changed = true;
+  }
+
+  // $(".tab").each(function (index) {
+  //   console.log(index);
+  //  // $('#recipeInput').val("");
+  //  //  $('#recipeInput').val(localStorage.getItem(index));
+  // })
+  // $("#recipe1").on('click', function (event) {
+  //   event.preventDefault();
+  //   console.log("recipe1tab");
+  //   $('#recipeInput').val("");
+  //   $('#recipeInput').val(localStorage.getItem('1'));
+  // })
+  var saveRecipe1 = $("#saveRecipeButton");
+  saveRecipe1.on('click', function (event) {
+    event.preventDefault();
+    
+    var recipe1Input = $('#recipeInput').val();
+  console.log("hello ", String(currentTab.currentId));
+  localStorage.setItem(String(currentTab.currentId), JSON.stringify(recipe1Input));
   
+  })
+
+
+
+  });
 
 //  **********************  Recipe Text Input and localStorage below   **********************************************
 
 // var defaultTab = recipe1tab;
 // $('#recipeInput').val(localStorage.getItem('1'));
 
-var recipe1tab = $("#recipe1");
-recipe1tab.on('click', function (event) {
-  event.preventDefault();
-  console.log("recipe1tab");
-  $('#recipeInput').val("");
-  $('#recipeInput').val(localStorage.getItem('1'));
+// var recipe2Input = $('#recipeInput').val();
+// var recipe2tab = $("#recipe2");
+// recipe2tab.on('click', function (event) {
+//   event.preventDefault();
+//   console.log("recipe2tab");
+//   $('#recipeInput').val("");
+//   $('#recipeInput').val(localStorage.getItem('2'));
+  
+//   var saveRecipe2 = $("#saveRecipeButton");
 
-  var saveRecipe1 = $("#saveRecipeButton");
-
-  saveRecipe1.on('click', function (event) {
-  event.preventDefault();
-  var recipe1Input = $('#recipeInput').val();
-  console.log(recipe1Input);
-  localStorage.setItem('1', JSON.stringify(recipe1Input));
-
-  })
-})
-
-var recipe2tab = $("#recipe2");
-recipe2tab.on('click', function (event) {
-  event.preventDefault();
-  console.log("recipe2tab");
-  $('#recipeInput').val("");
-  $('#recipeInput').val(localStorage.getItem('2'));
-
-  var saveRecipe2 = $("#saveRecipeButton");
-
-  saveRecipe2.on('click', function (event) {
-  event.preventDefault();
-  var recipe2Input = $('#recipeInput').val();
-  console.log(recipe2Input);
-  localStorage.setItem('2', JSON.stringify(recipe2Input));
+//   saveRecipe2.on('click', function (event) {
+//   event.preventDefault();
+//   console.log(recipe2Input);
+//   localStorage.setItem('2', JSON.stringify(recipe2Input));
 
 
-  })
-})
+//   })
+// })
 
-var recipe3tab = $("#recipe3");
-recipe3tab.on('click', function (event) {
-  event.preventDefault();
-  console.log("recipe3tab");
-  $('#recipeInput').val("");
-  $('#recipeInput').val(localStorage.getItem('3'));
+// var recipe3tab = $("#recipe3");
+// recipe3tab.on('click', function (event) {
+//   event.preventDefault();
+//   console.log("recipe3tab");
+//   $('#recipeInput').val("");
+//   $('#recipeInput').val(localStorage.getItem('3'));
 
-  var saveRecipe3 = $("#saveRecipeButton");
+//   var saveRecipe3 = $("#saveRecipeButton");
 
-  saveRecipe3.on('click', function (event) {
-  event.preventDefault();
-  var recipe3Input = $('#recipeInput').val();
-  console.log(recipe3Input);
-  localStorage.setItem('3', JSON.stringify(recipe3Input));
-
-
-  })
-})
-
-var recipe4tab = $("#recipe4");
-recipe4tab.on('click', function (event) {
-  event.preventDefault();
-  console.log("recipe4tab");
-  $('#recipeInput').val("");
-  $('#recipeInput').val(localStorage.getItem('4'));
-
-  var saveRecipe4 = $("#saveRecipeButton");
-
-  saveRecipe4.on('click', function (event) {
-    event.preventDefault();
-    var recipe4Input = $('#recipeInput').val();
-    console.log(recipe4Input);
-    localStorage.setItem('4', JSON.stringify(recipe4Input));
-  })
-})
-
-var recipe5tab = $("#recipe5");
-recipe5tab.on('click', function (event) {
-  event.preventDefault();
-  console.log("recipe5tab");
-  $('#recipeInput').val("");
-  $('#recipeInput').val(localStorage.getItem('5'));
-
-  var saveRecipe5 = $("#saveRecipeButton");
-
-  saveRecipe5.on('click', function (event) {
-  event.preventDefault();
-  var recipe5Input = $('#recipeInput').val();
-  console.log(recipe5Input);
-  localStorage.setItem('5', JSON.stringify(recipe5Input));
+//   saveRecipe3.on('click', function (event) {
+//   event.preventDefault();
+//   var recipe3Input = $('#recipeInput').val();
+//   console.log(recipe3Input);
+//   localStorage.setItem('3', JSON.stringify(recipe3Input));
 
 
-  })
-})
+//   })
+// })
+
+// var recipe4tab = $("#recipe4");
+// recipe4tab.on('click', function (event) {
+//   event.preventDefault();
+//   console.log("recipe4tab");
+//   $('#recipeInput').val("");
+//   $('#recipeInput').val(localStorage.getItem('4'));
+
+//   var saveRecipe4 = $("#saveRecipeButton");
+
+//   saveRecipe4.on('click', function (event) {
+//     event.preventDefault();
+//     var recipe4Input = $('#recipeInput').val();
+//     console.log(recipe4Input);
+//     localStorage.setItem('4', JSON.stringify(recipe4Input));
+//   })
+// })
+
+// var recipe5tab = $("#recipe5");
+// recipe5tab.on('click', function (event) {
+//   event.preventDefault();
+//   console.log("recipe5tab");
+//   $('#recipeInput').val("");
+//   $('#recipeInput').val(localStorage.getItem('5'));
+
+//   var saveRecipe5 = $("#saveRecipeButton");
+
+//   saveRecipe5.on('click', function (event) {
+//   event.preventDefault();
+//   var recipe5Input = $('#recipeInput').val();
+//   console.log(recipe5Input);
+//   localStorage.setItem('5', JSON.stringify(recipe5Input));
+
+
+//   })
+// })
 
 
 
