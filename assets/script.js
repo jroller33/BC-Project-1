@@ -4,20 +4,21 @@ $(document).ready(() => {
 
     // Get text fom input search box
     let searchQuery = $('#youtubeSearchBar').val();
-    // Here we are composing the endpoint with query parameters as defined from https://developers.google.com/youtube/v3/docs/search/list
-    // part=snippet is like a required default
-    // maxResults=10 set the number of results we want to retrieve
-    // key is your custom key gotten from the previoud step
-    let url = 'https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&key=AIzaSyCYchlTicuWz3_usJZyluJKkW0S6OAoh7E&q=' + searchQuery;
-    // ajax request here setting the url, method GET
-    // we want to populate the div .video-play with an iframe that will hold the first video result. 
+    // make the endpoint with query parameters (https://developers.google.com/youtube/v3/docs/search/list)
+    // part=snippet is required. maxResults=10 set the number of results we want to retrieve
+    let url = 'https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&key=' + searchQuery;
+    // ajax request here setting the url, method GET. iframe will hold the first video result
+
+    // old YT API Key: AIzaSyCYchlTicuWz3_usJZyluJKkW0S6OAoh7E&q=             
+    // new YT API Key: AIzaSyAfADij3OcyyP9YBqxt0k4TWa-SMryM9hs           
 
     $.ajax({
       url: url,
       method: 'GET',
       success: (result) => {
         $('.video-play').text('');
-        $('.video-play').append(`<iframe class="aspect-w-16 aspect-h-9 grid h-screen place-items-center grid h-screen place-items-center" src=https://www.youtube.com/embed/${result.items[0].id.videoId} allowFullScreen title='youtube player' />`)
+        $('.video-play').append(`<iframe class="flex-auto grid place-items-center w-screen" src=https://www.youtube.com/embed/${result.items[0].id.videoId} allowFullScreen title='youtube player' />`)
+        // iframe class="aspect-w-16 aspect-h-9 grid h-screen place-items-center grid h-screen place-items-center"
       },
       error: (err, response) => {
         console.log(err.responseText);
@@ -26,6 +27,27 @@ $(document).ready(() => {
     })
   };
 
+  
+
+  //  RECIPE DATABASE API
+  const settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/156992/similar",
+    "method": "GET",
+    "headers": {
+      "X-RapidAPI-Key": "06c3507b35msh698002782ccefe9p1140d5jsn972a6177f96f",
+      "X-RapidAPI-Host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com"
+    }
+  };
+  
+  $.ajax(settings).done(function (response) {
+    console.log(response);
+  });
+
+
+
+    //  TABS, RECIPE TEXT AND SAVING TO LOCAL STORAGE
   const doTabCapture = (index) => {
       // $(".tab").each(function (index) {
   //   console.log(index);
