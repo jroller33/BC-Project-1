@@ -13,15 +13,11 @@
 
 
 <body> 
-        <div class="flex-auto grid place-items-center w-screen bg-white dark:bg-slate-800 rounded-lg px-6 py-8 ring-1 ring-slate-900/5 shadow-xl">
-        <div>
-          <span class="inline-flex items-center justify-center p-2 bg-indigo-500 rounded-md shadow-lg">
-            <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"></svg>
-          </span>
-        </div> 
-        <h3 class="text-slate-900 dark:text-white mt-5 text-base font-medium tracking-tight">UCook</h3>
-        <p class="text-slate-500 dark:text-slate-40 0 mt-2 text-sm">
-            A recipe app that you can follow along and save recipes while you watch.
+        <div class="flex-auto grid place-items-center w-screen dark:bg-slate-500 rounded-lg px-6 py-8 ring-1 ring-slate-900/5 shadow-xl">
+
+        <h3 class="text-white mt-5 text-base text-xl font-bold">UCook</h3>
+        <p class="dark:text-white 0 mt-2 text-sm">
+            A recipe app that you can find new recipes and save them, watch recipe videos, or create your own.
         </p>
     </div>
     
@@ -47,12 +43,15 @@
 
         <!--      Save Recipe Text Input Area     -->
 
-    <div class="bg-white dark:bg-slate-800 rounded-lg px-6 py-8 ring-1 ring-slate-900/5 shadow-xl">
+    <div class="dark:bg-slate-400 rounded-lg px-6 py-8 ring-1 ring-slate-900/5 shadow-xl">
       <form>
-        <p><label for="Recipe" class="text-white grid place-items-center w-screen">Recipe:</label></p>
+        <p><label for="Recipe" class="text-white grid place-items-center w-screen font-bold">Type or Paste a Recipe:</label></p>
         <textarea id="recipeInput" name="Recipe Input" class="grid place-items-center w-screen" rows="15"></textarea>
         <br>
-        <button type="button" id="saveRecipeButton" class="text-white grid place-items-center w-screen">Save Recipe</button>
+        <button type="button" id="saveRecipeButton" class="grid place-items-center w-screen bg-slate-400 hover:bg-slate-600 text-white font-bold py-2 px-4 rounded">
+        Save Recipe
+        </button>
+        <!-- <button type="button" id="saveRecipeButton" class="text-black grid place-items-center w-screen">Save Recipe</button> -->
             <!-- onclick="store()"  -->
         <!-- <input type="submit" value="Submit"> -->
       </form>
@@ -61,18 +60,21 @@
     <!-- rows="15" cols="200" -->
 
                    <!--      SECOND API        -->
-      <form>   
+      <!-- <form>   
         <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-gray-300">Search</label>
         <div class="relative">
             <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
                 <svg class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
-            </div>
-            <input id="recipeSearchBar" data-type="0" type="search" class="block p-4 pl-10 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" aria-label="Search" aria-describedby="button-addon2" placeholder="Search for recipes in the Recipe Database" required>
-            <button id="" type="recipeSearchButton" class="text-white absolute right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" id="button-addon2">Search</button>
-        </div>
-    </form>
-    <div id="recipeApiResults" class="block p-4 pl-10 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-      <p>Recipe API goes here</p>
+            </div> -->
+            <!-- <input id="recipeSearchBar" data-type="0" type="search" class="block p-4 pl-10 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" aria-label="Search" aria-describedby="button-addon2" placeholder="Search for recipes in the Recipe Database" required>
+            <button id="" type="recipeSearchButton" class="text-white absolute right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" id="button-addon2">Search</button> -->
+        <!-- </div>
+    </form> -->
+    <div class="block p-4 pl-10 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+      
+      <p id="recipeApiResults">
+
+      </p>
     </div>
 
 

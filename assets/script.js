@@ -1,12 +1,12 @@
 $(document).ready(() => {
   // doSearch, get text in search input, make ajax call, populate divs with results
   const doSearch = () => {
-    console.log("search");
+  //  console.log("search");
     // Get text fom input search box
     let searchQuery = $('#youtubeSearchBar').val();
     // make the endpoint with query parameters (https://developers.google.com/youtube/v3/docs/search/list)
     // part=snippet is required. maxResults=10 set the number of results we want to retrieve
-    let url = 'https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&key=' + searchQuery;
+     let url = 'https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&key=' + searchQuery;
     
      
     
@@ -29,20 +29,43 @@ $(document).ready(() => {
 
 
   //  RECIPE DATABASE API
+
   const settings = {
     "async": true,
     "crossDomain": true,
-    "url": "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/complexSearch?query=spaghetti",
+    "url": "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/random?number=1",
     "method": "GET",
     "headers": {
       "X-RapidAPI-Key": "",
       "X-RapidAPI-Host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com"
-    }
+    }   // api key:  06c3507b35msh698002782ccefe9p1140d5jsn972a6177f96f          
   };
   
   $.ajax(settings).done(function (response) {
-    console.log(response);
+   // console.log(response);
+   // console.log(response.recipes[0].title);
+   // console.log(response.recipes[0].instructions);
+    $('#recipeApiResults').append((response.recipes[0].title)) + '\n';
+    $('#recipeApiResults').append(response.recipes[0].instructions);
+
+
   });
+
+
+  // const settings = {
+  //   "async": true,
+  //   "crossDomain": true,
+  //   "url": "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/complexSearch?query=spaghetti",
+  //   "method": "GET",
+  //   "headers": {
+  //     "X-RapidAPI-Key": "",
+  //     "X-RapidAPI-Host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com"
+  //   }
+  // };
+  
+  // $.ajax(settings).done(function (response) {
+  //   console.log(response);
+  // });
   // $.ajax(settings).done(function (response) {
   //   console.log(response);
   //   $('#recipeApiResults').append(`<textarea />`)
@@ -66,7 +89,7 @@ $(document).ready(() => {
   // click event on submit button, doSearch with input text
       $("#youtubeSearchButton").on("click", function(event) {
         event.preventDefault();
-        console.log("search button");
+      //  console.log("search button");
         doSearch();
       
     });
@@ -88,7 +111,7 @@ $(document).ready(() => {
 
   if (!currentTab.changed)
   {
-    console.log("here")
+   // console.log("here")
     doTabCapture(0)
     currentTab.changed = true;
   }
