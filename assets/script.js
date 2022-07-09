@@ -8,8 +8,7 @@ $(document).ready(() => {
     // part=snippet is required. maxResults=10 set the number of results we want to retrieve
     let url = 'https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&key=' + searchQuery;
     
-    // old YT API Key: AIzaSyCYchlTicuWz3_usJZyluJKkW0S6OAoh7E&q=             
-    // new YT API Key: AIzaSyAfADij3OcyyP9YBqxt0k4TWa-SMryM9hs           
+     
     
     // ajax request here setting the url, method GET. iframe will hold the first video result
     $.ajax({
@@ -36,7 +35,7 @@ $(document).ready(() => {
     "url": "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/complexSearch?query=spaghetti&offset=0&number=10&limitLicense=false&ranking=2",
     "method": "GET",
     "headers": {
-      "X-RapidAPI-Key": "06c3507b35msh698002782ccefe9p1140d5jsn972a6177f96f",
+      "X-RapidAPI-Key": "",
       "X-RapidAPI-Host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com"
     }
   };
@@ -241,7 +240,6 @@ $(document).ready(() => {
 // function stopVideo() {
 //   player.stopVideo();
 // }
-// text to speech API Key: 9910c3d681d94aae8f78907df9e56a0b
 // 
 
 // saveButton.on('click', function (event) {
