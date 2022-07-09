@@ -1,7 +1,7 @@
 $(document).ready(() => {
   // doSearch, get text in search input, make ajax call, populate divs with results
   const doSearch = () => {
-
+    console.log("search");
     // Get text fom input search box
     let searchQuery = $('#youtubeSearchBar').val();
     // make the endpoint with query parameters (https://developers.google.com/youtube/v3/docs/search/list)
@@ -16,7 +16,7 @@ $(document).ready(() => {
       method: 'GET',
       success: (result) => {
         $('.video-play').text('');
-        $('.video-play').append(`<iframe class="flex-auto grid place-items-center w-screen" src=https://www.youtube.com/embed/${result.items[0].id.videoId} allowFullScreen title='youtube player' />`)
+        $('.video-play').append(`<iframe class="flex-auto grid place-items-center w-screen h-screen" src=https://www.youtube.com/embed/${result.items[0].id.videoId} allowFullScreen title='youtube player' />`)
         // iframe class="aspect-w-16 aspect-h-9 grid h-screen place-items-center grid h-screen place-items-center"
       },
       error: (err, response) => {
@@ -32,7 +32,7 @@ $(document).ready(() => {
   const settings = {
     "async": true,
     "crossDomain": true,
-    "url": "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/complexSearch?query=spaghetti&offset=0&number=10&limitLicense=false&ranking=2",
+    "url": "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/complexSearch?query=spaghetti",
     "method": "GET",
     "headers": {
       "X-RapidAPI-Key": "",
@@ -64,8 +64,11 @@ $(document).ready(() => {
   // })
   }
   // click event on submit button, doSearch with input text
-      $("#youtubeSearchButton").click(() => {
-      doSearch();
+      $("#youtubeSearchButton").on("click", function(event) {
+        event.preventDefault();
+        console.log("search button");
+        doSearch();
+      
     });
 
     $(".tab").on("click",function (event) {
