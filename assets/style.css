@@ -1,3 +1,119 @@
+.body-container {
+  background-image: linear-gradient(#4A8DB7, #A2E2F8);
+  color: #214f7e;
+}
+
+#parentLi {
+  display: flex;
+  justify-content: space-between;
+}
+
+#cssHeader {
+  background-color: #3B7097;
+  color: #cbf1fd;
+
+}
+
+.cssBody { 
+  background-color: #75BDE0;
+}
+
+#recipeInput {
+  background-color: #A2E2F8;
+  color: #000C18;
+}
+#recipeInput:hover {
+  background-color:#75BDE0;
+  color: white;
+  transition: 0.7s;
+}
+#recipeInput:focus {
+  outline-color: transparent;
+  outline-style:solid;
+  box-shadow: 0 0 0 4px #3B7097;
+}
+/* #recipeInput:active {
+  background-color: #A2E2F8;
+  color: #000C18;
+} */
+#saveRecipeButton {
+  background-color: #A2E2F8;
+  color: #000C18;
+}
+
+#saveRecipeButton:hover {
+  background-color:#3B7097;
+  color: white;
+  transition: 0.7s;
+}
+
+#saveRecipeButton:focus {
+  outline-color: transparent;
+  outline-style:solid;
+  box-shadow: 0 0 0 4px #3B7097;
+}
+#saveRecipeButton:active {
+  background-color: #3B7097;
+  color: white;
+}
+
+input ::placeholder {  /*                     NOT WORKING */
+  color: white;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: red;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: red;
+}
+.cssYTsearch {                   
+  background-color: #75BDE0;
+
+}
+.cssYTsearch:hover {
+  outline-color: transparent;
+  outline-style:solid;
+  box-shadow: 0 0 0 4px #3B7097;
+  transition: 0.7s;
+  
+}
+.cssYTsearch:focus {
+  outline-color: transparent;
+  outline-style:solid;
+  box-shadow: 0 0 0 4px #3B7097;
+  
+}
+#youtubeSearchButton {
+  background-color: #A2E2F8;
+  color: #000C18;
+}
+
+#youtubeSearchButton:hover {
+  background-color:#3B7097;
+  color: white;
+  transition: 0.7s;
+}
+
+#youtubeSearchButton:focus {
+  outline-color: transparent;
+  outline-style:solid;
+  box-shadow: 0 0 0 4px #3B7097;
+}
+#youtubeSearchButton:active {
+  background-color: #3B7097;
+  color: white;
+}
+/* .cssYTsearch:active {
+  background-color: #A2E2F8;
+  
+} */
+
+
+
+
 /* .body-container {
     text-align: center;
 }

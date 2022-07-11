@@ -4,9 +4,8 @@ $(document).ready(() => {
   // doSearch, get text in search input, make ajax call, populate divs with results
   const doSearch = () => {
     let searchQuery = $('#youtubeSearchBar').val();
-
-    // if (searchQuery == null) {
-    //   searchQuery = "pizza recipe"
+    console.log(searchQuery);
+    // if (searchQuery == null) { searchQuery = "pizza recipe" }
     // }
 
     // make the endpoint with query parameters (https://developers.google.com/youtube/v3/docs/search/list) part=snippet is required. maxResults=10 set the number of results we want to retrieve
@@ -34,7 +33,7 @@ $(document).ready(() => {
     doSearch();
   });
 
-  // on document ready doSearch with default input text
+  // on document ready doSearch with default input text -- NOT WORKING
   if ($("#youtubeSearchBar").attr("data-type") == "0") {
     searchQuery = "pizza recipe";
     console.log(searchQuery);
@@ -42,7 +41,6 @@ $(document).ready(() => {
 
     $("#youtubeSearchBar").attr("data-type", "1")
   }
-
 
   //                    RECIPE DATABASE API (response is a random recipe)
 
@@ -61,11 +59,9 @@ $(document).ready(() => {
     // console.log(response);
     // console.log(response.recipes[0].title);
     // console.log(response.recipes[0].instructions);
-    $('#recipeApiResults').append((response.recipes[0].title)) + '\n\n';
+    $('#recipeApiResults').append((response.recipes[0].title)) + '\n';
     $('#recipeApiResults').append(response.recipes[0].instructions);
   });
-
-
 
   //             TABS, RECIPE TEXT AND SAVING TO LOCAL STORAGE
 
@@ -74,7 +70,6 @@ $(document).ready(() => {
     $('#recipeInput').val(JSON.parse(localStorage.getItem(index)));
     currentTab.currentId = index;
   }
-
 
   $(".tab").on("click", function (event) {
     // event.preventDefault();
@@ -89,7 +84,6 @@ $(document).ready(() => {
     doTabCapture(0)
     currentTab.changed = true;
   }
-
 
   var saveRecipe1 = $("#saveRecipeButton");
   saveRecipe1.on('click', function (event) {

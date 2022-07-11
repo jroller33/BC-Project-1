@@ -19,96 +19,108 @@
 
 <body class="body-container">
 
-  <ul id="parentLi" class="flex flex-wrap text-sm font-medium text-center text-gray-500 border-b border-gray-200">
-    <li id="recipe1" class="w-1/6 mr-2 tab tabCheck" value="0">
+  <!--                    RECIPE TABS             -->
+
+  <ul id="parentLi"
+    class="flex flex-wrap text-sm font-medium place-items-center text-center text-white border-b border-gray-200">
+    <li class="w-1/9"></li>   <!-- these push the tabs in towards the center -->
+    <li class="w-1/9"></li>
+    <li class="w-1/9"></li>
+    <li class="w-1/9"></li>
+    <li id="recipe1" class="w-1/9 mr-2 tab tabCheck" value="0">
       <a class="tabCheck inline-block p-4 rounded-t-lg hover:text-blue-600 hover:bg-gray-50" value="0">Recipe 1</a>
     </li>
-    <li class="w-1/6 mr-2 tab tabCheck" value="1">
+    <li class="w-1/9 mr-2 tab tabCheck" value="1">
       <a id="recipe2" class="inline-block p-4 rounded-t-lg hover:text-blue-600 hover:bg-gray-50" value="1">Recipe 2</a>
     </li>
-    <li class="w-1/6 mr-2 tab tabCheck" value="2">
+    <li class="w-1/9 mr-2 tab tabCheck" value="2">
       <a id="recipe3" class="inline-block p-4 rounded-t-lg hover:text-blue-600 hover:bg-gray-50" value="2">Recipe 3</a>
     </li>
-    <li class="w-1/6 mr-2 tab tabCheck" value="3">
+    <li class="w-1/9 mr-2 tab tabCheck" value="3">
       <a id="recipe4" class="inline-block p-4 rounded-t-lg hover:text-blue-600 hover:bg-gray-50" value="3">Recipe 4</a>
     </li>
-    <li class="w-1/6 mr-2 tab tabCheck" value="4">
+    <li class="w-1/9 mr-2 tab tabCheck" value="4">
       <a id="recipe5" class="inline-block p-4 rounded-t-lg hover:text-blue-600 hover:bg-gray-50" value="4">Recipe 5</a>
     </li>
+    <li class="w-1/9"></li>
+    <li class="w-1/9"></li>
+    <li class="w-1/9"></li>
+    <li class="w-1/9"></li>
   </ul>
 
-  <!--        UCOOK HEADER AND DESCRIPTION      -->
-  <header class="flex justify-center">
-    <div
-      class="w-1/2 grid place-items-center dark:bg-slate-500 rounded-lg px-6 py-8 ring-1 ring-slate-900/5 shadow-xl ">
+  <!--                  UCOOK HEADER AND DESCRIPTION      -->
 
-      <h1 class="text-white mt-5 text-base text-xl font-bold">UCook</h3>
-        <p class="dark:text-white 0 mt-2 text-sm">
+  <header class="flex justify-center">
+    <div id="cssHeader"
+      class="w-1/2 grid place-items-center dark:bg-slate-500 rounded-lg px-6 py-8 ring-1 ring-slate-900/5 shadow-xl ">
+      <h1 class="mt-5 text-base text-xl font-bold">UCook</h3>
+        <p class="0 mt-2 text-sm">
           A recipe app that you can find new recipes and save them, watch recipe videos, or create your own.
         </p>
     </div>
   </header>
 
+  <!--                   SAVE RECIPE TEXT AREA     -->
 
-  <!--       RECIPE TABS      -->
-
-
-
-  <!--      Save Recipe Text Input Area     -->
   <div class="flex justify-center">
-    <div class="w-1/2 grid place-items-center dark:bg-slate-400 rounded-lg px-6 py-8 ring-1 ring-slate-900/5 shadow-xl">
+    <div class="cssBody w-1/2 grid place-items-center rounded-lg px-6 py-8 ring-1 ring-slate-900/5 shadow-xl">
       <form class="w-full">
-        <p><label for="Recipe" class="text-white flex justify-center font-bold">Type or Paste a Recipe:</label></p>
-        <textarea id="recipeInput" name="Recipe Input" class="w-full grid place-items-center h-96"></textarea>
+
+        <label for="Recipe"
+          class="flex justify-center font-bold block mb-2 text-sm font-medium">Save
+          Recipes</label>
+        <textarea id="recipeInput" name="Recipe Input" rows="4"
+          class="block p-2.5 w-full grid place-items-center text-sm rounded-lg border"
+          placeholder="Type or Paste a Recipe:"></textarea>
+
         <br>
         <button type="button" id="saveRecipeButton"
-          class="grid place-items-center bg-slate-400 hover:bg-slate-600 text-white font-bold py-2 px-4 rounded">
-          Save Recipe
-        </button>
+          class="grid place-items-center text-white font-bold py-2 px-4 rounded
+          text-white font-medium rounded-lg text-sm px-4 py-2">Save Recipe</button>
       </form>
     </div>
   </div>
-  <!-- RECIPE DATABASE API RESULTS GO HERE    -->
+
+  <!--                 RECIPE DATABASE API RESULTS GO HERE    -->
   <div class="flex justify-center">
-    <div class=" w-1/2">
+    <div class="w-1/2">
       <div
-        class="block p-4 pl-10 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+        class="cssBody block p-4 pl-10 w-full text-sm rounded-lg shadow-xl">
         <p id="recipeApiResults"></p>
       </div>
     </div>
   </div>
 
-  <!--         YOUTUBE SEARCH BAR      -->
+  <!--               YOUTUBE SEARCH BAR      -->
+
   <div class="flex justify-center">
     <div class=" w-1/2">
       <form>
         <label for="default-search"
-          class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-gray-300">Search</label>
-        <div class="relative">
+          class="mb-2 text-sm font-medium sr-only">Search</label>
+        <div class="relative cssYTsearch">
           <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
-            <svg class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                 d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
             </svg>
           </div>
           <input id="youtubeSearchBar" data-type="0" type="search"
-            class="block p-4 pl-10 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            class="cssYTsearch block p-4 pl-10 w-full text-sm rounded-lg shadow-xl"
             aria-label="Search" aria-describedby="button-addon2" placeholder="Search for recipes on YouTube" required>
 
           <button id="youtubeSearchButton" type="button"
-            class="text-white absolute right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Search</button>
+            class="absolute right-2.5 bottom-2.5 font-medium rounded-lg text-sm px-4 py-2">Search</button>
         </div>
       </form>
     </div>
   </div>
 
-
-
   <!--        YOUTUBE VIDEO GOES HERE   -->
 
   <div class="video-page w-screen">
-    <div class="container grid place-items-center w-screen"">
+    <div class="container grid place-items-center w-screen">
           <div class=" flex-auto grid place-items-center w-screen">
       <div class="video-play flex-auto grid place-items-center w-screen">
       </div>
