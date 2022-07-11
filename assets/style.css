@@ -45,8 +45,7 @@
   color: #000C18;
 }
 #recipeInput:hover {
-  background-color:#f2b5d4;
-  color: #ffffff;
+  background-color:#f7d6e0;
   transition: 0.7s;
 }
 #recipeInput:focus {
