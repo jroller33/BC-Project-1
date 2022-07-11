@@ -1,5 +1,5 @@
 .body-container {
-  background-image: linear-gradient(#eff7f6, #f2b5d4);
+  background-image: linear-gradient(#eff7f6, #f7d6e0);
   color: #000C18;
 }
 
@@ -16,14 +16,14 @@
   background-color:#f2b5d4;
   color: #ffffff;
   transition: 0.7s;
-  box-shadow: 0 0 0 4px #7bdff2;
+  box-shadow: 0 0 0 4px #ffffff;
 
 }
 
 .cssTabs:focus {
   outline-color: transparent;
   outline-style:solid;
-  box-shadow: 0 0 0 4px #7bdff2;
+  box-shadow: 0 0 0 4px #ffffff;
 }
 .cssTabs:active {
   background-color: #f2b5d4;
