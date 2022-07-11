@@ -21,7 +21,7 @@ $(document).ready(() => {
       method: 'GET',
       success: (result) => {
         $('.video-play').text('');
-        $('.video-play').append(`<iframe class="flex-auto grid place-items-center w-screen h-screen" src=https://www.youtube.com/embed/${result.items[0].id.videoId} allowFullScreen title='youtube player' />`)
+        $('.video-play').append(`<iframe class="flex-auto grid place-items-center" src=https://www.youtube.com/embed/${result.items[0].id.videoId} allowFullScreen title='youtube player' />`)
       },
       error: (err, response) => {
         console.log(err.responseText);
