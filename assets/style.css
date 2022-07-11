@@ -1,6 +1,6 @@
 .body-container {
-  background-image: linear-gradient(#4A8DB7, #A2E2F8);
-  color: #214f7e;
+  background-image: linear-gradient(#eff7f6, #f2b5d4);
+  color: #000C18;
 }
 
 #parentLi {           /* TABS */
@@ -10,48 +10,49 @@
 
 .cssTabs {
   color: #000C18;
-  color: white;
 }
 
 .cssTabs:hover {
-  background-color:#3B7097;
-  color: white;
+  background-color:#f2b5d4;
+  color: #ffffff;
   transition: 0.7s;
+  box-shadow: 0 0 0 4px #7bdff2;
+
 }
 
 .cssTabs:focus {
   outline-color: transparent;
   outline-style:solid;
-  box-shadow: 0 0 0 4px #3B7097;
+  box-shadow: 0 0 0 4px #7bdff2;
 }
 .cssTabs:active {
-  background-color: #3B7097;
-  color: white;
+  background-color: #f2b5d4;
+  color: #ffffff;
 }
 
 #cssHeader {          /* uCook header */
-  background-color: #3B7097;
-  color: #cbf1fd;
+  background-color: #7bdff2;
+  color: #000C18;
 
 }
 
 .cssBody { 
-  background-color: #75BDE0;
+  background-color: #b2f7ef;
 }
 
 #recipeInput {
-  background-color: #A2E2F8;
+  background-color: #eff7f6;
   color: #000C18;
 }
 #recipeInput:hover {
-  background-color:#75BDE0;
-  color: white;
+  background-color:#f2b5d4;
+  color: #ffffff;
   transition: 0.7s;
 }
 #recipeInput:focus {
   outline-color: transparent;
   outline-style:solid;
-  box-shadow: 0 0 0 4px #3B7097;
+  box-shadow: 0 0 0 4px #7bdff2;
 }
 /* #recipeInput:active {
   background-color: #A2E2F8;
@@ -63,19 +64,19 @@
 }
 
 #saveRecipeButton:hover {
-  background-color:#3B7097;
-  color: white;
+  background-color:#f2b5d4;
+  color: #ffffff;
   transition: 0.7s;
 }
 
 #saveRecipeButton:focus {
   outline-color: transparent;
   outline-style:solid;
-  box-shadow: 0 0 0 4px #3B7097;
+  box-shadow: 0 0 0 4px #7bdff2;
 }
 #saveRecipeButton:active {
-  background-color: #3B7097;
-  color: white;
+  background-color: #f2b5d4;
+  color: #ffffff;
 }
 
 ::placeholder {  /*                     NOT WORKING */
@@ -91,20 +92,20 @@
   color: white;
 }
 .cssYTsearch {                   
-  background-color: #75BDE0;
+  background-color: #b2f7ef;
 
 }
 .cssYTsearch:hover {
   outline-color: transparent;
   outline-style:solid;
-  box-shadow: 0 0 0 4px #3B7097;
+  box-shadow: 0 0 0 4px #7bdff2;
   transition: 0.7s;
   
 }
 .cssYTsearch:focus {
   outline-color: transparent;
   outline-style:solid;
-  box-shadow: 0 0 0 4px #3B7097;
+  box-shadow: 0 0 0 4px #7bdff2;
   
 }
 #youtubeSearchButton {
@@ -113,19 +114,19 @@
 }
 
 #youtubeSearchButton:hover {
-  background-color:#3B7097;
-  color: white;
+  background-color:#f2b5d4;
+  color: #ffffff;
   transition: 0.7s;
 }
 
 #youtubeSearchButton:focus {
   outline-color: transparent;
   outline-style:solid;
-  box-shadow: 0 0 0 4px #3B7097;
+  box-shadow: 0 0 0 4px #7bdff2;
 }
 #youtubeSearchButton:active {
-  background-color: #3B7097;
-  color: white;
+  background-color: #f2b5d4;
+  color: #ffffff;
 }
 /* .cssYTsearch:active {
   background-color: #A2E2F8;
