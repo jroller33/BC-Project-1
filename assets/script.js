@@ -1,11 +1,8 @@
 $(document).ready(() => {
  
   //              YOUTUBE SEARCH AND DYNAMICALLY CREATE IFRAME
- 
   // doSearch, get text in search input, make ajax call, populate divs with results
   const doSearch = () => {
-
-    // Get text fom input search box
     let searchQuery = $('#youtubeSearchBar').val();
 
     // if (searchQuery == null) {
@@ -15,13 +12,13 @@ $(document).ready(() => {
     // make the endpoint with query parameters (https://developers.google.com/youtube/v3/docs/search/list) part=snippet is required. maxResults=10 set the number of results we want to retrieve
      let url = 'https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&key=' + searchQuery;
     
-    // ajax request here setting the url, method GET. iframe will hold the first video result
+    // ajax request here setting the url, iframe will hold the first video result
     $.ajax({
       url: url,
       method: 'GET',
       success: (result) => {
         $('.video-play').text('');
-        $('.video-play').append(`<iframe class="flex-auto grid place-items-center" src=https://www.youtube.com/embed/${result.items[0].id.videoId} allowFullScreen title='youtube player' />`)
+        $('.video-play').append(`<iframe class="w-1/2 h-96 flex-auto grid place-items-center" src=https://www.youtube.com/embed/${result.items[0].id.videoId} allowFullScreen title='youtube player' />`)
       },
       error: (err, response) => {
         console.log(err.responseText);
@@ -39,6 +36,8 @@ $(document).ready(() => {
 
     // on document ready doSearch with default input text
     if ($("#youtubeSearchBar").attr("data-type") == "0") {
+      searchQuery = "pizza recipe";
+      console.log(searchQuery);
       doSearch();
      
       $("#youtubeSearchBar").attr("data-type", "1")
