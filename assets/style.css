@@ -1,5 +1,5 @@
 .body-container {
-  background-image: linear-gradient(#eff7f6, #f7d6e0);
+  background-image: linear-gradient(to bottom right, #eff7f6, #f2b5d4);
   color: #000C18;
 }
 
@@ -64,7 +64,7 @@
 
 #saveRecipeButton:hover {
   background-color:#f2b5d4;
-  color: #ffffff;
+  /* color: #ffffff; */
   transition: 0.7s;
 }
 
@@ -97,6 +97,8 @@
 .cssYTsearch:hover {
   outline-color: transparent;
   outline-style:solid;
+  background-color: #eff7f6;
+
   box-shadow: 0 0 0 4px #7bdff2;
   transition: 0.7s;
   
@@ -105,7 +107,9 @@
   outline-color: transparent;
   outline-style:solid;
   box-shadow: 0 0 0 4px #7bdff2;
-  
+}
+.cssYTsearch:active {
+  background-color: #eff7f6;
 }
 #youtubeSearchButton {
   background-color: #A2E2F8;
@@ -114,7 +118,7 @@
 
 #youtubeSearchButton:hover {
   background-color:#f2b5d4;
-  color: #ffffff;
+  /* color: #ffffff; */
   transition: 0.7s;
 }
 
@@ -127,10 +131,7 @@
   background-color: #f2b5d4;
   color: #ffffff;
 }
-/* .cssYTsearch:active {
-  background-color: #A2E2F8;
-  
-} */
+
 
 
 
