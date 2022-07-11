@@ -27,22 +27,22 @@
     <li class="w-1/9"></li>
     <li class="w-1/9"></li>
     <li class="w-1/9"></li>
-    <li id="recipe1" class="w-1/9 mr-2 tab tabCheck" value="0">
-      <a class="tabCheck inline-block p-4 rounded-t-lg hover:text-blue-600 hover:bg-gray-50" value="0">Recipe 1</a>
+    <li id="recipe1" class="cssTabs w-1/9 tab tabCheck" value="0">
+      <a class="tabCheck inline-block p-4 rounded-full" value="0">Recipe 1</a>
     </li>
-    <li class="w-1/9 mr-2 tab tabCheck" value="1">
-      <a id="recipe2" class="inline-block p-4 rounded-t-lg hover:text-blue-600 hover:bg-gray-50" value="1">Recipe 2</a>
+    <li class="cssTabs w-1/9 tab tabCheck" value="1">
+      <a id="recipe2" class="inline-block p-4 rounded-full" value="1">Recipe 2</a>
     </li>
-    <li class="w-1/9 mr-2 tab tabCheck" value="2">
-      <a id="recipe3" class="inline-block p-4 rounded-t-lg hover:text-blue-600 hover:bg-gray-50" value="2">Recipe 3</a>
+    <li class="cssTabs w-1/9 tab tabCheck" value="2">
+      <a id="recipe3" class="inline-block p-4 rounded-full" value="2">Recipe 3</a>
     </li>
-    <li class="w-1/9 mr-2 tab tabCheck" value="3">
-      <a id="recipe4" class="inline-block p-4 rounded-t-lg hover:text-blue-600 hover:bg-gray-50" value="3">Recipe 4</a>
+    <li class="cssTabs w-1/9 tab tabCheck" value="3">
+      <a id="recipe4" class="inline-block p-4 rounded-full" value="3">Recipe 4</a>
     </li>
-    <li class="w-1/9 mr-2 tab tabCheck" value="4">
-      <a id="recipe5" class="inline-block p-4 rounded-t-lg hover:text-blue-600 hover:bg-gray-50" value="4">Recipe 5</a>
+    <li class="cssTabs w-1/9 tab tabCheck" value="4">
+      <a id="recipe5" class="inline-block p-4 rounded-full" value="4">Recipe 5</a>
     </li>
-    <li class="w-1/9"></li>
+    <li class="w-1/9"></li><!-- these push the tabs in towards the center -->
     <li class="w-1/9"></li>
     <li class="w-1/9"></li>
     <li class="w-1/9"></li>
@@ -50,9 +50,9 @@
 
   <!--                  UCOOK HEADER AND DESCRIPTION      -->
 
-  <header class="flex justify-center">
+  <header class="flex justify-center mb-8">
     <div id="cssHeader"
-      class="w-1/2 grid place-items-center dark:bg-slate-500 rounded-lg px-6 py-8 ring-1 ring-slate-900/5 shadow-xl ">
+      class="w-3/4 grid place-items-center dark:bg-slate-500 rounded-lg px-6 py-8 ring-1 ring-slate-900/5 shadow-xl ">
       <h1 class="mt-5 text-base text-xl font-bold">UCook</h3>
         <p class="0 mt-2 text-sm">
           A recipe app that you can find new recipes and save them, watch recipe videos, or create your own.
@@ -62,8 +62,8 @@
 
   <!--                   SAVE RECIPE TEXT AREA     -->
 
-  <div class="flex justify-center">
-    <div class="cssBody w-1/2 grid place-items-center rounded-lg px-6 py-8 ring-1 ring-slate-900/5 shadow-xl">
+  <div class="flex justify-center mb-8">
+    <div class="cssBody w-3/4 grid place-items-center rounded-lg px-6 py-8 ring-1 ring-slate-900/5 shadow-xl">
       <form class="w-full">
 
         <label for="Recipe"
@@ -75,15 +75,14 @@
 
         <br>
         <button type="button" id="saveRecipeButton"
-          class="grid place-items-center text-white font-bold py-2 px-4 rounded
-          text-white font-medium rounded-lg text-sm px-4 py-2">Save Recipe</button>
+          class="grid place-items-center font-bold py-2 px-4 rounded font-medium rounded-lg text-sm px-4 py-2">Save Recipe</button>
       </form>
     </div>
   </div>
 
   <!--                 RECIPE DATABASE API RESULTS GO HERE    -->
-  <div class="flex justify-center">
-    <div class="w-1/2">
+  <div class="flex justify-center mb-8">
+    <div class="w-3/4">
       <div
         class="cssBody block p-4 pl-10 w-full text-sm rounded-lg shadow-xl">
         <p id="recipeApiResults"></p>
@@ -94,7 +93,7 @@
   <!--               YOUTUBE SEARCH BAR      -->
 
   <div class="flex justify-center">
-    <div class=" w-1/2">
+    <div class="w-3/4 rounded-lg shadow-xl">
       <form>
         <label for="default-search"
           class="mb-2 text-sm font-medium sr-only">Search</label>

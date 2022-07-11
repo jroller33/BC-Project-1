@@ -3,12 +3,33 @@
   color: #214f7e;
 }
 
-#parentLi {
+#parentLi {           /* TABS */
   display: flex;
   justify-content: space-between;
 }
 
-#cssHeader {
+.cssTabs {
+  color: #000C18;
+  color: white;
+}
+
+.cssTabs:hover {
+  background-color:#3B7097;
+  color: white;
+  transition: 0.7s;
+}
+
+.cssTabs:focus {
+  outline-color: transparent;
+  outline-style:solid;
+  box-shadow: 0 0 0 4px #3B7097;
+}
+.cssTabs:active {
+  background-color: #3B7097;
+  color: white;
+}
+
+#cssHeader {          /* uCook header */
   background-color: #3B7097;
   color: #cbf1fd;
 
@@ -57,17 +78,17 @@
   color: white;
 }
 
-input ::placeholder {  /*                     NOT WORKING */
+::placeholder {  /*                     NOT WORKING */
   color: white;
   opacity: 1; /* Firefox */
 }
 
 :-ms-input-placeholder { /* Internet Explorer 10-11 */
-  color: red;
+  color: white;
 }
 
 ::-ms-input-placeholder { /* Microsoft Edge */
-  color: red;
+  color: white;
 }
 .cssYTsearch {                   
   background-color: #75BDE0;
