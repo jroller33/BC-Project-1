@@ -1,5 +1,5 @@
 .body-container {
-  background-image: linear-gradient(to bottom right, #eff7f6, #f2b5d4);
+  background-image: linear-gradient(to bottom right, #eff7f6, #f7d6e0);
   color: #000C18;
 }
 
@@ -13,8 +13,8 @@
 }
 
 .cssTabs:hover {
-  background-color:#f2b5d4;
-  color: #ffffff;
+  background-color:#eff7f6;
+  /* color: #ffffff; */
   transition: 0.7s;
   box-shadow: 0 0 0 4px #ffffff;
 
@@ -26,18 +26,18 @@
   box-shadow: 0 0 0 4px #ffffff;
 }
 .cssTabs:active {
-  background-color: #f2b5d4;
-  color: #ffffff;
+  background-color: #eff7f6;
+  /* color: #ffffff; */
 }
 
 #cssHeader {          /* uCook header */
-  background-color: #7bdff2;
+  background-color: #90dbf4;
   color: #000C18;
 
 }
 
 .cssBody { 
-  background-color: #b2f7ef;
+  background-color: #a9d6e5;
 }
 
 #recipeInput {
@@ -45,7 +45,7 @@
   color: #000C18;
 }
 #recipeInput:hover {
-  background-color:#f7d6e0;
+  /* background-color:#f7d6e0; */
   transition: 0.7s;
 }
 #recipeInput:focus {
@@ -63,7 +63,7 @@
 }
 
 #saveRecipeButton:hover {
-  background-color:#f2b5d4;
+  background-color:#eff7f6;
   /* color: #ffffff; */
   transition: 0.7s;
 }
@@ -74,7 +74,7 @@
   box-shadow: 0 0 0 4px #7bdff2;
 }
 #saveRecipeButton:active {
-  background-color: #f2b5d4;
+  background-color: #eff7f6;
   color: #ffffff;
 }
 
@@ -91,7 +91,7 @@
   color: white;
 }
 .cssYTsearch {                   
-  background-color: #b2f7ef;
+  background-color: #a9d6e5;
 
 }
 .cssYTsearch:hover {
@@ -117,7 +117,7 @@
 }
 
 #youtubeSearchButton:hover {
-  background-color:#f2b5d4;
+  background-color:#eff7f6;
   /* color: #ffffff; */
   transition: 0.7s;
 }
@@ -128,7 +128,7 @@
   box-shadow: 0 0 0 4px #7bdff2;
 }
 #youtubeSearchButton:active {
-  background-color: #f2b5d4;
+  background-color: #eff7f6;
   color: #ffffff;
 }
 

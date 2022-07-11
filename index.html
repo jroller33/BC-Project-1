@@ -13,7 +13,7 @@
   -->
   <link rel="stylesheet" href="./assets/style.css" />
 
-  <title>UCook</title>
+  <title>uCook</title>
 </head>
 
 
@@ -23,7 +23,7 @@
 
   <ul id="parentLi"
     class="flex flex-wrap text-sm font-medium place-items-center text-center text-white border-b border-gray-200">
-    <li class="w-1/9"></li>   <!-- these push the tabs in towards the center -->
+    <li class="w-1/9"></li> <!-- these push the tabs in towards the center -->
     <li class="w-1/9"></li>
     <li class="w-1/9"></li>
     <li class="w-1/9"></li>
@@ -51,9 +51,8 @@
   <!--                  UCOOK HEADER AND DESCRIPTION      -->
 
   <header class="flex justify-center mb-8">
-    <div id="cssHeader"
-      class="w-3/4 grid place-items-center rounded-lg px-6 py-8 ring-1 ring-slate-900/5 shadow-2xl ">
-      <h1 class="mt-5 text-base text-xl font-bold">UCook</h3>
+    <div id="cssHeader" class="w-3/5 grid place-items-center rounded-lg px-6 py-8 ring-1 ring-slate-900/5 shadow-2xl ">
+      <h1 class="mt-5 text-base text-xl font-bold">uCook</h3>
         <p class="0 mt-2 text-sm">
           A recipe app that you can find new recipes and save them, watch recipe videos, or create your own.
         </p>
@@ -63,27 +62,29 @@
   <!--                   SAVE RECIPE TEXT AREA     -->
 
   <div class="flex justify-center mb-8">
-    <div class="cssBody w-3/4 grid place-items-center rounded-lg px-6 py-8 ring-1 ring-slate-900/5 shadow-2xl">
+    <div class="cssBody w-3/5 grid place-items-center rounded-lg px-6 py-8 ring-1 ring-slate-900/5 shadow-2xl">
       <form class="w-full">
 
-        <label for="Recipe"
-          class="flex justify-center font-bold block mb-2 text-sm font-medium">Type or Paste a Recipe:</label>
+        <label for="Recipe" class="flex justify-center font-bold block mb-2 text-sm font-medium">Type or Paste a
+          Recipe:</label>
         <textarea id="recipeInput" name="Recipe Input" rows="4"
           class="block p-2.5 w-full grid place-items-center text-sm rounded-lg border"
-          placeholder="Type or Paste a Recipe:"></textarea>
+          placeholder="Recipe goes here..."></textarea>
 
         <br>
-        <button type="button" id="saveRecipeButton"
-          class="grid place-items-center font-bold py-2 px-4 rounded font-medium rounded-lg text-sm px-4 py-2">Save Recipe</button>
+        <div class="flex justify-center">
+          <button type="button" id="saveRecipeButton"
+            class="grid place-items-center font-bold py-2 px-4 rounded-full font-medium rounded-lg text-sm px-4 py-2">Save
+            Recipe</button>
+        </div>
       </form>
     </div>
   </div>
 
   <!--                 RECIPE DATABASE API RESULTS GO HERE    -->
   <div class="flex justify-center mb-8">
-    <div class="w-3/4">
-      <div
-        class="cssBody block p-4 pl-10 w-full text-sm rounded-lg shadow-2xl">
+    <div class="w-3/5">
+      <div class="cssBody block p-4 pl-10 w-full text-sm rounded-lg shadow-2xl">
         <p id="recipeApiResults"></p>
       </div>
     </div>
@@ -92,10 +93,9 @@
   <!--               YOUTUBE SEARCH BAR      -->
 
   <div class="flex justify-center mb-8">
-    <div class="w-3/4 rounded-lg shadow-2xl">
+    <div class="w-3/5 rounded-lg shadow-2xl">
       <form>
-        <label for="default-search"
-          class="mb-2 text-sm font-medium sr-only">Search</label>
+        <label for="default-search" class="mb-2 text-sm font-medium sr-only">Search</label>
         <div class="relative cssYTsearch">
           <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -105,11 +105,11 @@
             </svg>
           </div>
           <input id="youtubeSearchBar" data-type="0" type="search"
-            class="cssYTsearch block p-4 pl-10 w-full text-sm rounded-lg shadow-2xl"
-            aria-label="Search" aria-describedby="button-addon2" placeholder="Search for recipes on YouTube" required>
+            class="cssYTsearch block p-4 pl-10 w-full text-sm rounded-lg shadow-2xl" aria-label="Search"
+            aria-describedby="button-addon2" placeholder="Search for recipes on YouTube" required>
 
           <button id="youtubeSearchButton" type="button"
-            class="absolute right-2.5 bottom-2.5 font-medium rounded-lg text-sm px-4 py-2">Search</button>
+            class="absolute right-2.5 bottom-2.5 font-medium rounded-full text-sm px-4 py-2">Search</button>
         </div>
       </form>
     </div>
@@ -119,11 +119,11 @@
 
   <div class="video-page w-screen">
     <div class="container grid place-items-center w-screen">
-          <div class=" flex-auto grid place-items-center w-screen">
-      <div class="video-play flex-auto grid place-items-center w-screen">
+      <div class=" flex-auto grid place-items-center w-screen">
+        <div class="video-play flex-auto grid place-items-center w-screen">
+        </div>
       </div>
     </div>
-  </div>
   </div>
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
   <script src="./assets/script.js"></script>
