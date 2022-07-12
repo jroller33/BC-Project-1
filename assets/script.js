@@ -9,7 +9,7 @@ $(document).ready(() => {
     // }
 
     // make the endpoint with query parameters (https://developers.google.com/youtube/v3/docs/search/list) part=snippet is required. maxResults=10 set the number of results we want to retrieve
-    let url = 'https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&key=' + searchQuery;
+    let url = 'https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&key=AIzaSyAfADij3OcyyP9YBqxt0k4TWa-SMryM9hs&q=' + searchQuery;
 
     // ajax request here setting the url, iframe will hold the first video result
     $.ajax({
@@ -50,7 +50,7 @@ $(document).ready(() => {
     "url": "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/random?number=1",
     "method": "GET",
     "headers": {
-      "X-RapidAPI-Key": "",
+      "X-RapidAPI-Key": "06c3507b35msh698002782ccefe9p1140d5jsn972a6177f96f",
       "X-RapidAPI-Host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com"
     }
   };

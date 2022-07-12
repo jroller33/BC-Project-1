@@ -6,7 +6,9 @@
 
 #
 
-This is a recipe app where you can find new recipes and save them, watch recipe videos, or create your own. You can save recipes by typing or pasting them into the text area and clicking "Save recipe". You can save up to five different recipes by clicking the tabs at the top of the page. These saved recipes use localStorage to persist on the page, even after refresh.
+This is a recipe app where you can find new recipes and save them, watch recipe videos, or create your own. This application features Tailwind CSS, jQuery, dynamically updated HTML and CSS, and server-side APIs.
+
+You can save recipes by typing or pasting them into the text area and clicking "Save recipe". You can save up to five different recipes by clicking the tabs at the top of the page. These saved recipes use localStorage to persist on the page, even after refresh.
 
 Underneath the "Save recipe" button there is a random recipe from the Recipe Database API. This recipe will be different each time the page is loaded or refreshed. If you find a recipe you like, you can copy it and paste it into the text area to save it.
 
