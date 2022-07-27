@@ -1,5 +1,6 @@
 # uCook
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 
 ***   PLEASE NOTE: This app uses API keys that must be hardcoded in './assets/script.js' to work correctly. These free API keys only have a limited number of calls, so if you receive an error message (especially from YouTube Data API), then either the API keys are missing or we have reached our quota of API calls. You will have to wait at least one hour before attempting to use the app again.   ***
